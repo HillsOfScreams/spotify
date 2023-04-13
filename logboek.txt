@@ -1,0 +1,9 @@
+week 1: insert af, helemaal gereworked (gebaseert op oud project wat nogal vaag was)
+
+week 2: admin panel en front end ding, crud bijna af. moet alleen nog ff update fixen.
+
+week 3: front end toch nogal anders bart had nog ff geholpen met me front-end, staat nu in foreach met paar cards. crud helemaal af.
+
+week 4:  front end rework, bug = price --> Price (koste nogal veel tijd, had in me model iets niet goed toegevoegd bij het toevoegen van prijs) // ccs stylesheet fuckery
+
+week 5: bug = placeholder city (bij t aanbrengen van paar placeholders had ik perongelijk bij een veld: 'name="city" verwijdert , stock erbij, verder met frontend
