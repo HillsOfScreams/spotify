@@ -13,6 +13,7 @@ namespace Spotify
         public string artistName;
         public float duration;
 
+
         public Song(string name, string artistName, float duration)
         {
             this.name = name;

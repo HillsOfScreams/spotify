@@ -7,3 +7,7 @@ week 3: front end toch nogal anders bart had nog ff geholpen met me front-end, s
 week 4:  front end rework, bug = price --> Price (koste nogal veel tijd, had in me model iets niet goed toegevoegd bij het toevoegen van prijs) // ccs stylesheet fuckery
 
 week 5: bug = placeholder city (bij t aanbrengen van paar placeholders had ik perongelijk bij een veld: 'name="city" verwijdert , stock erbij, verder met frontend
+
+week 6: vrijheid
+
+week 7: begin filters & foto's (path), aanklooien aan tutorial voor category filter, path fixen in update en insert
