@@ -1,0 +1,1 @@
+Project niet af: unsolvable bug en tijdstekort. (slechte planning aan mijn kant)

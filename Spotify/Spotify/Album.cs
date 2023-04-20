@@ -38,6 +38,24 @@ namespace Spotify
                 Console.WriteLine(songs[i].name);
             }
         }
+        public void copyAlbumToList(List<Song> album, List<Song> playlist)
+        {
+            foreach (Song song in album)
+            {
+                playlist.Add(song);
+            }
+        }
+
+        public void PlayRandomSongInAlbum(List<Album> albums)
+        {
+            Random random = new Random();
+            int albumIndex = random.Next(albums.Count);
+            Album album = albums[albumIndex];
+            int songIndex = random.Next(album.songs.Count);
+            Song song = album.songs[songIndex];
+             
+            Playlist.PlaySong(song);
+        }
+
     }
 }
-
