@@ -10,21 +10,27 @@ namespace Spotify
     internal class Program
     {
         
+
         public static List<Playlist> playlists = new List<Playlist>();
 
         public static Playlist playlist1 = new Playlist("Playlist one");
 
         public static Playlist playlist2 = new Playlist("Playlist two");
 
-        public static List<Album> ALubmsdgawidiyaw = new List<Album>();
+        public static List<Album> blitzKrieg = new List<Album>();
+
+        public static List<Song> songsList = new List<Song>();
 
         static void Main(string[] args)
         {
             /*mainMenu();*/
             Playlist playlist1 = new Playlist("Playlist 1");
-            playlist1.addSongToList(new Song("Song 13", "Artist 13", 3.6f));
-            playlist1.addSongToList(new Song("Song 14", "Artist 14", 2.7f));
-            playlist1.addSongToList(new Song("Song 15", "Artist 15", 4.3f));
+            playlist1.addSongToList(new Song("Song 13", "Artist 13", 5f));
+            playlist1.addSongToList(new Song("Song 14", "Artist 14", 20f));
+            playlist1.addSongToList(new Song("Song 15", "Artist 15", 40f));
+            playlists.Add(playlist1);
+            songsList.Add(song);
+           mainMenu();
         }
 
            public static void mainMenu()
@@ -101,6 +107,7 @@ namespace Spotify
                     Song[] songs = {song1, song2, song3, song4, song5, song6, song7, song8, song9, song10,
                 song11, song12, song13, song14, song15, song16, song17, song18, song19, song20};
 
+                
                     foreach (Song song in songs)
                     {
                         Console.WriteLine(song.name);
@@ -269,7 +276,7 @@ namespace Spotify
                 if(playAction == "1")
                 {
                     Console.WriteLine("what would you like to do in playlists?");
-                Console.WriteLine("make a playlist (create)");
+                    Console.WriteLine("make a playlist (create)");
                     Console.WriteLine("addSongToList(Song song); (1)");
                     Console.WriteLine("ReturnSongs(); (2)");
                     Console.WriteLine("deleteSong(Song song); (3)");
@@ -277,24 +284,82 @@ namespace Spotify
                     Console.WriteLine("PlaySong(Song song) (5)");
                     Console.WriteLine("PlayRandomSongInPlaylist(List<Playlist> playlists) (6)");
                     string playListAction = Console.ReadLine();
-                    if (playListAction == "1"){
-
-                    }
-                    else if (playListAction == "2")
+                if (playListAction == "1")
+                {
+                    foreach (Playlist playlist in playlists)
                     {
-
+                        Playlist.PrintSong(playlist);
                     }
-                    else if (playListAction == "3")
-                    {
+                    Console.WriteLine("what playlist would you like to select? ");
+                    string? SelectedList = Console.ReadLine();
 
-                    }
-                    else if (playListAction == "4")
-                    {
 
-                    }
-                    else if (playListAction == "5")
+                    Console.WriteLine("what song do you want to add to the selected playlist? ");
+                    string? appel = Console.ReadLine();
+                    foreach (Playlist playlist in playlists)
                     {
-                    foreach(Playlist playlist in playlists)
+                        if (playlist.PlaylistName == appel)
+                        {
+                            addSongToList
+                        }
+                       
+                    }
+                    
+                  
+
+                    playlist.addSongToList(song);
+                }
+                else if (playListAction == "2")
+                {
+                    foreach (Playlist playlist in playlists)
+                    {
+                        Playlist.PrintSong(playlist);
+                    }
+                }
+                else if (playListAction == "3")
+                {
+                    Console.WriteLine("What song do you wish to delete?");
+                    foreach (Playlist playlist in playlists)
+                    {
+                        Playlist.PrintSong(playlist);
+                    }
+
+                    string? songName = Console.ReadLine();
+
+                    for (int i = 0; i < playlists.Count; i++)
+                    {
+                        Playlist playlist = playlists[i];
+                        List<Song> songs = playlist.ReturnSongs();
+                        for (int j = 0; j < songs.Count; j++)
+                        {
+                            Song song = songs[j];
+                            if (song.name == songName)
+                            {
+                                playlist.deleteSong(song);
+                                Console.WriteLine("Song deleted!");
+                                playListSongMenu();
+                                return;
+                            }
+                        }
+                    }
+                    Console.WriteLine("Song not found in any playlist!");
+                    playListSongMenu();
+                }
+
+                else if (playListAction == "4")
+                {
+                    foreach (Playlist playlist in playlists)
+                    {
+                        Playlist.PrintSong(playlist);
+                    }
+                }
+
+
+
+                else if (playListAction == "5")
+                {
+
+                    foreach (Playlist playlist in playlists)
                     {
                         Playlist.PrintSong(playlist);
                     }
@@ -302,14 +367,24 @@ namespace Spotify
                     Console.Write("what song would you like to play?");
                     string? songName = Console.ReadLine();
 
-                    Playlist.PlaySong(songName);
-                    
-                     }
-                    else if (playListAction == "6")
+                    foreach (Playlist playlist in playlists)
                     {
+                        foreach (Song song in playlist.ReturnSongs())
+                        {
+                            if (song.name == songName)
+                            {
+                                Playlist.PlaySong(song);
+                            }
 
+                        }
                     }
-                    else{
+                }
+                else if (playListAction == "6")
+                {
+
+                }
+                else
+                {
                     Console.WriteLine("whats the name of the playlist you want to create?");
                     string playlistName = Console.ReadLine();
                     Playlist kaas = new Playlist(playlistName);

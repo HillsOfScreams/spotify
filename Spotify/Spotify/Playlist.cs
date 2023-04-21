@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Timers;
 
 namespace Spotify
 {
@@ -46,6 +47,10 @@ namespace Spotify
             {
                 songs.Remove(song);
             }
+            else
+            {
+                Console.WriteLine("song not found!");
+            }
         }
 
         public static void PrintSong(Playlist playlist)
@@ -60,16 +65,17 @@ namespace Spotify
                 Console.WriteLine(songs[i].name);
             }
         }
-private static bool isPaused = false;
-private static bool repeatSong = false;
-private static Song? currentSong;
+        private static bool isPaused = false;
+        private static bool repeatSong = false;
+        private static Song? currentSong;
+
         public static void PlaySong(Song song)
         {
             Console.WriteLine($"Playing {song.name}");
 
             for (float i = song.duration; i >= 0; i--)
             {
-                if (isPaused) 
+                if (isPaused)
                 {
                     Console.WriteLine($"Song paused at {i}");
                     while (isPaused)
@@ -82,28 +88,50 @@ private static Song? currentSong;
                 if (i == 0)
                 {
                     Console.WriteLine("Song finished playing");
-                    Console.WriteLine("Would you like to repeat?");
+                    Console.WriteLine("Would you like to repeat? (3)");
+                    Console.Write("press (1) to go back to the playlist menu, press (2) for main menu");
+                    string? menu = Console.ReadLine();
+                    if (menu == "1")
+                    {
+                        Program.playListSongMenu();
+                    }
+                    else if (menu == "2")
+                    {
+                        Program.mainMenu();
+                    }
+                    else
+                    {
+                        repeatSong = true;
+                    }
                     break;
                 }
                 Console.WriteLine($"Song is now playing {i}");
                 System.Threading.Thread.Sleep(1000);
-            } while (repeatSong) ;
-        } 
+            }
 
-        public void PauseTimer()
+            if (repeatSong)
+            {
+                PlaySong(song);
+            }
+        }
+
+
+        public static void PauseTimer()
         {
             isPaused = true;
         }
 
-        public void UnpauseTimer()
+        public static void UnpauseTimer()
         {
             isPaused = false;
         }
-        public void RepeatSong()
+
+        public static void RepeatSong()
         {
             repeatSong = true;
-            Console.WriteLine($"Repeating {currentSong.name}");
+            Console.WriteLine($"Repeating {currentSong?.name}");
         }
+
         public void PlayRandomSongInPlaylist(List<Playlist> playlists)
         {
             Random random = new Random();
