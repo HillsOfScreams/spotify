@@ -9,15 +9,25 @@ namespace Spotify
 {
     internal class Program
     {
-
+        
         public static List<Playlist> playlists = new List<Playlist>();
+
+        public static Playlist playlist1 = new Playlist("Playlist one");
+
+        public static Playlist playlist2 = new Playlist("Playlist two");
+
         public static List<Album> ALubmsdgawidiyaw = new List<Album>();
 
         static void Main(string[] args)
         {
-            mainMenu();
+            /*mainMenu();*/
+            Playlist playlist1 = new Playlist("Playlist 1");
+            playlist1.addSongToList(new Song("Song 13", "Artist 13", 3.6f));
+            playlist1.addSongToList(new Song("Song 14", "Artist 14", 2.7f));
+            playlist1.addSongToList(new Song("Song 15", "Artist 15", 4.3f));
+        }
 
-            void mainMenu()
+           public static void mainMenu()
             {
                 Console.WriteLine("welcome to spotfy!");
                 Console.WriteLine("what action would you like to take?");
@@ -45,13 +55,16 @@ namespace Spotify
                 }
             }
 
+        public static void innit()
+        {
+
+        }
 
 
 
 
 
-
-            void devMode()
+        public static void devMode()
             {
                 Console.WriteLine("welcome to dev mode, what's the plan?");
                 Console.WriteLine("make song instances (1)");
@@ -63,26 +76,26 @@ namespace Spotify
 
                 if (devAction == "1")
                 {
-                    Song song1 = new Song("Stairway to Heaven", "Led Zeppelin", 8.02f);
-                    Song song2 = new Song("Bohemian Rhapsody", "Queen", 5.55f);
-                    Song song3 = new Song("Smells Like Teen Spirit", "Nirvana", 4.38f);
-                    Song song4 = new Song("Hotel California", "The Eagles", 6.30f);
-                    Song song5 = new Song("Billie Jean", "Michael Jackson", 4.54f);
-                    Song song6 = new Song("Imagine", "John Lennon", 3.03f);
-                    Song song7 = new Song("Purple Haze", "Jimi Hendrix", 2.50f);
-                    Song song8 = new Song("Sweet Child o' Mine", "Guns N' Roses", 5.55f);
-                    Song song9 = new Song("Livin' on a Prayer", "Bon Jovi", 4.09f);
-                    Song song10 = new Song("Like a Rolling Stone", "Bob Dylan", 6.13f);
-                    Song song11 = new Song("Under Pressure", "Queen and David Bowie", 4.04f);
-                    Song song12 = new Song("Thriller", "Michael Jackson", 5.58f);
-                    Song song13 = new Song("My Heart Will Go On", "Celine Dion", 4.40f);
-                    Song song14 = new Song("Nothing Else Matters", "Metallica", 6.28f);
-                    Song song15 = new Song("Highway to Hell", "AC/DC", 3.29f);
-                    Song song16 = new Song("November Rain", "Guns N' Roses", 8.57f);
-                    Song song17 = new Song("Every Breath You Take", "The Police", 4.13f);
-                    Song song18 = new Song("Radioactive", "Imagine Dragons", 3.06f);
-                    Song song19 = new Song("Back in Black", "AC/DC", 4.14f);
-                    Song song20 = new Song("Don't Stop Believin'", "Journey", 4.11f);
+                    Song song1 = new Song("Stairway to Heaven", "Led Zeppelin", 260.0f);
+                    Song song2 = new Song("Bohemian Rhapsody", "Queen", 260.0f);
+                    Song song3 = new Song("Smells Like Teen Spirit", "Nirvana", 260.0f);
+                    Song song4 = new Song("Hotel California", "The Eagles", 260.0f);
+                    Song song5 = new Song("Billie Jean", "Michael Jackson", 260.0f);
+                    Song song6 = new Song("Imagine", "John Lennon", 260.0f);
+                    Song song7 = new Song("Purple Haze", "Jimi Hendrix", 260.0f);
+                    Song song8 = new Song("Sweet Child o' Mine", "Guns N' Roses", 260.0f);
+                    Song song9 = new Song("Livin' on a Prayer", "Bon Jovi", 260.0f);
+                    Song song10 = new Song("Like a Rolling Stone", "Bob Dylan", 260.0f);
+                    Song song11 = new Song("Under Pressure", "Queen and David Bowie", 260.0f);
+                    Song song12 = new Song("Thriller", "Michael Jackson", 260.0f);
+                    Song song13 = new Song("My Heart Will Go On", "Celine Dion", 260.0f);
+                    Song song14 = new Song("Nothing Else Matters", "Metallica", 260.0f);
+                    Song song15 = new Song("Highway to Hell", "AC/DC", 260.0f);
+                    Song song16 = new Song("November Rain", "Guns N' Roses", 260.0f);
+                    Song song17 = new Song("Every Breath You Take", "The Police", 260.0f);
+                    Song song18 = new Song("Radioactive", "Imagine Dragons", 260.0f);
+                    Song song19 = new Song("Back in Black", "AC/DC", 260.0f);
+                    Song song20 = new Song("Don't Stop Believin'", "Journey", 260.0f);
 
                     Console.WriteLine("20 songs made!");
                     Song[] songs = {song1, song2, song3, song4, song5, song6, song7, song8, song9, song10,
@@ -111,15 +124,15 @@ namespace Spotify
                     if(devAction2 == "1")
                     {
 
-                        album2.addSongToList(new Song("Song 4", "Artist 4", 3.8f));
-                        album2.addSongToList(new Song("Song 5", "Artist 5", 4.0f));
-                        album2.addSongToList(new Song("Song 6", "Artist 6", 2.5f));
+                        album2.addSongToList(new Song("Song 4", "Artist 4", 260.0f));
+                        album2.addSongToList(new Song("Song 5", "Artist 5", 260.0f));
+                        album2.addSongToList(new Song("Song 6", "Artist 6", 260.0f));
 
-                        album1.addSongToList(new Song("Song 1", "Artist 1", 3.5f));
-                        album1.addSongToList(new Song("Song 2", "Artist 2", 4.2f));
-                        album1.addSongToList(new Song("Song 3", "Artist 3", 2.9f));
+                        album1.addSongToList(new Song("Song 1", "Artist 1", 260.0f));
+                        album1.addSongToList(new Song("Song 2", "Artist 2", 260.0f));
+                        album1.addSongToList(new Song("Song 3", "Artist 3", 260.0f));
 
-                        album3.addSongToList(new Song("Song 7", "Artist 7", 3.3f));
+                        album3.addSongToList(new Song("Song 7", "Artist 7", 260.0f));
                     }
                     else
                     {
@@ -130,9 +143,9 @@ namespace Spotify
                 }
                 else if(devAction == "3")
                 {
-                    Playlist playlist1 = new Playlist("Playlist 1");
+                    Playlist playlisttest = new Playlist("Playlist 1");
 
-                    Playlist playlist2 = new Playlist("Playlist 2");
+                    Playlist playlistmusic = new Playlist("Playlist 2");
 
                     Playlist playlist3 = new Playlist("Playlist 3");
 
@@ -147,25 +160,25 @@ namespace Spotify
 
                     if(devAction3 == "1")
                     {
-                        playlist5.addSongToList(new Song("Song 13", "Artist 13", 3.6f));
-                        playlist5.addSongToList(new Song("Song 14", "Artist 14", 2.7f));
-                        playlist5.addSongToList(new Song("Song 15", "Artist 15", 4.3f));
+                        playlist5.addSongToList(new Song("Song 13", "Artist 13", 260.0f));
+                        playlist5.addSongToList(new Song("Song 14", "Artist 14", 260.0f));
+                        playlist5.addSongToList(new Song("Song 15", "Artist 15", 420.0f));
 
-                        playlist4.addSongToList(new Song("Song 10", "Artist 10", 2.8f));
-                        playlist4.addSongToList(new Song("Song 11", "Artist 11", 4.5f));
-                        playlist4.addSongToList(new Song("Song 12", "Artist 12", 3.2f));
+                        playlist4.addSongToList(new Song("Song 10", "Artist 10", 260.0f));
+                        playlist4.addSongToList(new Song("Song 11", "Artist 11", 260.0f));
+                        playlist4.addSongToList(new Song("Song 12", "Artist 12", 260.0f));
 
-                        playlist3.addSongToList(new Song("Song 7", "Artist 7", 3.3f));
-                        playlist3.addSongToList(new Song("Song 8", "Artist 8", 3.7f));
-                        playlist3.addSongToList(new Song("Song 9", "Artist 9", 4.1f));
+                        playlist3.addSongToList(new Song("Song 7", "Artist 7", 260.0f));
+                        playlist3.addSongToList(new Song("Song 8", "Artist 8", 260.0f));
+                        playlist3.addSongToList(new Song("Song 9", "Artist 9", 260.0f));
 
-                        playlist2.addSongToList(new Song("Song 4", "Artist 4", 3.8f));
-                        playlist2.addSongToList(new Song("Song 5", "Artist 5", 4.0f));
-                        playlist2.addSongToList(new Song("Song 6", "Artist 6", 2.5f));
+                        playlist2.addSongToList(new Song("Song 4", "Artist 4", 260.0f));
+                        playlist2.addSongToList(new Song("Song 5", "Artist 5", 260.0f));
+                        playlist2.addSongToList(new Song("Song 6", "Artist 6", 260.0f));
 
-                        playlist1.addSongToList(new Song("Song 1", "Artist 1", 3.5f));
-                        playlist1.addSongToList(new Song("Song 2", "Artist 2", 4.2f));
-                        playlist1.addSongToList(new Song("Song 3", "Artist 3", 2.9f));
+                        playlist1.addSongToList(new Song("Song 1", "Artist 1", 260.0f));
+                        playlist1.addSongToList(new Song("Song 2", "Artist 2", 260.0f));
+                        playlist1.addSongToList(new Song("Song 3", "Artist 3", 260.0f));
                     }
                 }
 
@@ -212,7 +225,7 @@ namespace Spotify
                 }
             }
 
-            void albumMenu()
+        public static void albumMenu()
             {
                 Console.WriteLine("what action would you like to take?");
                 Console.WriteLine("- addSongToList(Song song) (1)");
@@ -248,21 +261,21 @@ namespace Spotify
                     mainMenu();
                 }
             }
-            void playListSongMenu()
+        public static void playListSongMenu()
             {
                 Console.Write("what would you like to do?");
                 Console.Write("playlists management (1) // song management (2)");
                 string playAction = Console.ReadLine();
                 if(playAction == "1")
                 {
-                    Console.Write("what would you like to do in playlists?");
-                    
-                    Console.Write("addSongToList(Song song); (1)");
-                    Console.Write("ReturnSongs(); (2)");
-                    Console.Write("deleteSong(Song song); (3)");
-                    Console.Write("PrintSong(Playlist playlist) (4)");
-                    Console.Write("PlaySong(Song song) (5)");
-                    Console.Write("PlayRandomSongInPlaylist(List<Playlist> playlists) (6)");
+                    Console.WriteLine("what would you like to do in playlists?");
+                Console.WriteLine("make a playlist (create)");
+                    Console.WriteLine("addSongToList(Song song); (1)");
+                    Console.WriteLine("ReturnSongs(); (2)");
+                    Console.WriteLine("deleteSong(Song song); (3)");
+                    Console.WriteLine("PrintSong(Playlist playlist) (4)");
+                    Console.WriteLine("PlaySong(Song song) (5)");
+                    Console.WriteLine("PlayRandomSongInPlaylist(List<Playlist> playlists) (6)");
                     string playListAction = Console.ReadLine();
                     if (playListAction == "1"){
 
@@ -281,36 +294,45 @@ namespace Spotify
                     }
                     else if (playListAction == "5")
                     {
-                        Console.Write("what song would you like to play?");
-                        string? songName = Console.ReadLine();
-                        
-
-
-                            Playlist.PlaySong(songName);
-                        
-
+                    foreach(Playlist playlist in playlists)
+                    {
+                        Playlist.PrintSong(playlist);
                     }
+
+                    Console.Write("what song would you like to play?");
+                    string? songName = Console.ReadLine();
+
+                    Playlist.PlaySong(songName);
+                    
+                     }
                     else if (playListAction == "6")
                     {
 
                     }
+                    else{
+                    Console.WriteLine("whats the name of the playlist you want to create?");
+                    string playlistName = Console.ReadLine();
+                    Playlist kaas = new Playlist(playlistName);
+
+                    playlists.Add(kaas);
+                }
                 }
                 else
                 {
 
-                }
+
+            }
             }
 
 
 
 
 
-            void friendMenu()
+        public static void friendMenu()
             {
 
             }
 
-        }
-        
+       
     }
 }
