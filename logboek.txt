@@ -11,3 +11,5 @@ week 5: bug = placeholder city (bij t aanbrengen van paar placeholders had ik pe
 week 6: vrijheid
 
 week 7: begin filters & foto's (path), aanklooien aan tutorial voor category filter, path fixen in update en insert
+
+week 8: presentatie
